@@ -1,0 +1,164 @@
+/* Reset default styles */
+:root {
+    --primary-color: #ff7777;
+    --spacing-large: 10rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    padding: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+a {
+    color: var(--primary-color);
+}
+
+.wrapper {
+    max-width: 1024px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.intro {
+    margin-top: var(--spacing-large);
+    margin-bottom: var(--spacing-large);
+    line-height: 1.6;
+    font-size: 1.25rem;
+}
+
+.cards {
+    display: grid;
+    gap: var(--spacing-large);
+    margin-top: 2rem;
+}
+
+.card {
+    border-radius: 2px;
+}
+
+.card h2 {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
+    font-size: 1.5rem;
+}
+
+.card p {
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+}
+
+.card .caption {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    letter-spacing: 0.05rem;
+}
+
+/* Add mobile styles */
+@media screen and (max-width: 768px) {
+    .card img {
+        aspect-ratio: 16/9;
+        object-fit: cover;
+    }
+
+    /* Adjust spacing for mobile */
+    :root {
+        --spacing-large: 4rem;
+    }
+
+    .wrapper {
+        padding: 0;
+    }
+
+    .cards {
+        gap: 3rem;
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--spacing-large);
+    padding-top: 1.5rem;
+    border-top: 1px dashed var(--primary-color);
+}
+
+.footer span {
+    font-size: 0.875rem;
+    letter-spacing: 0.05rem;
+}
+
+.contact-button {
+    position: fixed;
+    background: #ffedd4;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 1.75rem;
+    border-radius: 99px;
+    text-decoration: none;
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 0 rgba(255, 78, 78, 0.5);
+}
+
+.contact-button h3 {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
+    margin: 0;
+    text-align: center;
+}
+
+.contact-button .envelope {
+    fill: var(--primary-color);
+}
+
+.contact-button:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 0 rgba(255, 78, 78, 1);
+    cursor: pointer;
+}
+
+.contact-button:hover .envelope {
+    animation: wiggle 0.5s ease;
+}
+
+@keyframes wiggle {
+
+    0%,
+    100% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    75% {
+        transform: rotate(10deg);
+    }
+}
